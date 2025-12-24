@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syarat & Ketentuan Driver | Suruh Aja</title>
+
+<style>
+body{
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg,#0f9d58,#c9a227);
+    margin:0;
+    padding:16px;
+}
+.container{
+    max-width:640px;
+    margin:auto;
+    background:#ffffff;
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:15px;
+}
+.logo-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#1b5e20,#d4af37);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    color:#fff;
+}
+.logo-text{
+    font-size:22px;
+    font-weight:700;
+    color:#1b5e20;
+    letter-spacing:1px;
+}
+
+h2{
+    text-align:center;
+    color:#1b5e20;
+    margin:10px 0 15px;
+}
+
+/* IMAGE */
+.hero{
+    text-align:center;
+    margin-bottom:15px;
+}
+.hero img{
+    width:100%;
+    max-height:260px;
+    object-fit:cover;
+    border-radius:16px;
+    border:3px solid #e8f5e9;
+}
+
+/* TERMS BOX */
+.box{
+    max-height:320px;
+    overflow-y:auto;
+    background:#f9fff9;
+    border:1px solid #d4af37;
+    padding:16px;
+    border-radius:14px;
+    font-size:14px;
+    line-height:1.7;
+    color:#333;
+}
+.box p{
+    margin-bottom:10px;
+}
+
+/* CHECK */
+.check-area{
+    margin-top:16px;
+    font-size:14px;
+}
+.check-area input{
+    transform:scale(1.2);
+    margin-right:8px;
+}
+
+/* BUTTONS */
+.btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    margin-top:12px;
+}
+.btn-setuju{
+    background:linear-gradient(135deg,#2e7d32,#c9a227);
+    color:#fff;
+}
+.btn-tidak{
+    background:#b71c1c;
+    color:#fff;
+}
+.btn-lanjut{
+    background:linear-gradient(135deg,#1b5e20,#d4af37);
+    color:#fff;
+}
+.btn:disabled{
+    background:#9e9e9e;
+    cursor:not-allowed;
+}
+
+.footer{
+    text-align:center;
+    margin-top:12px;
+    font-size:12px;
+    color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LOGO -->
+<div class="logo">
+    <div class="logo-icon">🛵</div>
+    <div class="logo-text">SURUH AJA</div>
+</div>
+
+<h2>Syarat & Ketentuan Driver</h2>
+
+<!-- IMAGE DRIVER -->
+<div class="hero">
+<img src="https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&w=1200&q=80" alt="Driver Motor">
+</div>
+
+<!-- TERMS -->
+<div class="box">
+<p><b>1.</b> Driver wajib memiliki dana pribadi yang cukup sebagai dana talangan (backup) apabila terdapat pesanan kuliner yang memerlukan pembayaran di awal.</p>
+
+<p><b>2.</b> Driver wajib menggunakan atribut resmi internal perusahaan selama menjalankan tugas pengambilan dan pengantaran pesanan.</p>
+
+<p><b>3.</b> Driver hanya diperkenankan membeli dan mengantarkan produk sesuai dengan detail pesanan yang tercantum di dalam aplikasi.</p>
+
+<p><b>4.</b> Driver bertanggung jawab terhadap wilayah operasional yang telah ditentukan dan tercakup di dalam sistem aplikasi.</p>
+
+<p><b>5.</b> Driver dilarang mengambil, membeli, atau mengantarkan barang dari lokasi yang tidak terdaftar atau tidak sesuai dengan tugas yang diberikan aplikasi.</p>
+
+<p><b>6.</b> Driver dilarang keras membawa, mengantarkan, atau terlibat dalam distribusi barang yang dilarang oleh agama, negara, dan peraturan perundang-undangan yang berlaku.</p>
+
+<p><b>7.</b> Driver tidak diperkenankan menggunakan atribut perusahaan untuk kepentingan pribadi, tindakan melawan hukum, atau aktivitas di luar tugas resmi.</p>
+
+<p><b>8.</b> Setiap pelanggaran atas ketentuan ini yang terbukti secara sah akan dikenakan sanksi, termasuk pemberhentian kerja sebagai driver.</p>
+</div>
+
+<!-- AGREEMENT -->
+<div class="check-area">
+<input type="checkbox" id="agree">
+<label for="agree"> Saya menyatakan telah membaca, memahami, dan menyetujui seluruh syarat dan ketentuan di atas</label>
+</div>
+
+<!-- BUTTONS -->
+<button class="btn btn-setuju" onclick="setuju()">SETUJU</button>
+<button class="btn btn-tidak" onclick="window.close()">TIDAK SETUJU</button>
+
+<button class="btn btn-lanjut" id="btnLanjut" disabled onclick="download()">LANJUT DOWNLOAD APK DRIVER</button>
+
+<div class="footer">
+© Suruh Aja • Ketentuan Driver Resmi
+</div>
+
+</div>
+
+<script>
+const agree = document.getElementById("agree");
+const btnLanjut = document.getElementById("btnLanjut");
+
+function setuju(){
+    if(!agree.checked){
+        alert("Silakan centang persetujuan terlebih dahulu.");
+        return;
+    }
+    btnLanjut.disabled = false;
+    btnLanjut.scrollIntoView({behavior:"smooth"});
+}
+
+function download(){
+    window.location.href = "https://s.jagel.id/api/apk/489854/kulinerpilihan-2-1-driver.apk";
+}
+</script>
+
+</body>
+</html>
